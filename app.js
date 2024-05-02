@@ -1,6 +1,6 @@
 async function getWeather() {
     let stateSelected = document.getElementById("stateSelected")
-    const requestApp = await fetch(`http://api.weatherapi.com/v1/current.json?key=1d34254f1395482192e124938240205&q=${stateSelected.value}&aqi=no`)
+    const requestApp = await fetch(`https://api.weatherapi.com/v1/current.json?key=1d34254f1395482192e124938240205&q=${stateSelected.value}&aqi=no`)
     requestApp.json().then((res) => {
         return res
     }).then((data) => {
