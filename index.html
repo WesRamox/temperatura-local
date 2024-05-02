@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <form>
+            <input type="text" placeholder="Ex: Guarulhos" id="stateSelected">
+            <a id="sendButton" onclick="getWeather()">
+                <img src="./images/lupa.png"> 
+            </a>
+        </form>
+        <div id="list-details">
+            <p class="select">Escolha a região desejada</p>
+            <img src="./images/weather.png" alt="clima" id="weather-img">
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

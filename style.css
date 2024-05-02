@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+
+body {
+    width: 100vw;
+    height: 100vh;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(206, 232, 255);
+    align-items: center;
+}
+
+.box {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-image: url(./images/wallpaper.webp);
+    background-position: center;
+    background-size: cover;
+}
+
+form {
+    gap: 5px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#sendButton {
+    height: 30px;
+    background-color: rgba(187, 217, 255, 0.138);
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 0.5s ease;
+}
+
+#sendButton:hover {
+    transition: all 0.5s ease;
+    background-color: rgba(142, 81, 255, 0.173);
+}
+
+#sendButton img {
+    width: 20px;
+    padding: 2px;
+}
+
+input[type=text] {
+    height: 30px;
+    width: 100%;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid rgba(29, 29, 29, 0.435) 2px;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+input[type=text]:hover {
+    border-bottom: solid rgba(16, 16, 16, 0.683) 2px;
+    transition: all 0.5s ease;
+}
+
+input::placeholder {
+    color: rgb(38, 38, 38);
+}
+
+#list-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(248, 234, 255, 0.327);
+    width: 100%;
+}
+
+#weather-img {
+    width: 100px;
+}
+
+#details-response {
+    color: rgb(49, 49, 49);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#img-temp {
+    width: 65px;
+}
+
+.details {
+    display: flex;
+    gap: 10px;
+}
+
+#humidityBox, #windBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.subtitle {
+    color: rgb(48, 48, 48);
+}
+
+.state-name {
+    letter-spacing: 1.3px;
+}
+
+.select {
+    color: rgb(25, 25, 25);
+}
