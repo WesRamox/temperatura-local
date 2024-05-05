@@ -22,7 +22,16 @@ async function getWeather() {
                 </div>
             </div>
         </div>`
+
+        stateSelected.value = ""
     }).catch((err) => {
         return err
     })
 }
+
+document.getElementById("stateSelected").addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+        getWeather();
+    }
+  });
