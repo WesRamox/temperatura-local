@@ -2,7 +2,7 @@
 
 Este site foi feito em Javascript e estilização com CSS puro.
 
-![Aplicativo](https://snipboard.io/bUCLQA.jpg)
+![Aplicativo](https://snipboard.io/2no8bu.jpg)
 
 - [Veja aqui](https://temperatura-hoje.vercel.app/)
 
