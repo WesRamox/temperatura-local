@@ -3,7 +3,7 @@ function createRightBox(location) {
 
     const text = document.createElement('h1')
     text.textContent = location.location.name
-    
+
     const temp = document.createElement('h2')
     temp.textContent = `${location.current.temp_c}°C / ${location.current.temp_f}°F `
 
@@ -13,6 +13,7 @@ function createRightBox(location) {
     img.classList.add("img-temp")
 
 
+    detailsSelected.innerHTML = ""
     detailsSelected.append(img, text, temp)
 }
 
@@ -22,6 +23,7 @@ async function getWeather() {
     if (stateSelected != "") {
         const requestApp = await fetch(`https://api.weatherapi.com/v1/current.json?key=1d34254f1395482192e124938240205&q=${stateSelected}&aqi=no`)
         const data = await requestApp.json()
+        await createRightBox(data)
         
         let listDetails = document.getElementById("list-details")
         listDetails.innerHTML =
@@ -42,7 +44,6 @@ async function getWeather() {
         </div>
     </div>`
 
-        createRightBox(data)
 
         stateSelected = ""
     } else {
