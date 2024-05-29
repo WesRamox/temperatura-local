@@ -1,3 +1,21 @@
+function createRightBox(location) {
+    const detailsSelected = document.querySelector(".right")
+
+    const text = document.createElement('h1')
+    text.textContent = location.location.name
+    
+    const temp = document.createElement('h2')
+    temp.textContent = `${location.current.temp_c}°C / ${location.current.temp_f}°F `
+
+    const img = document.createElement('img')
+    img.src = location.current.condition.icon
+    img.alt = location.location.name
+    img.classList.add("img-temp")
+
+
+    detailsSelected.append(img, text, temp)
+}
+
 async function getWeather() {
     let stateSelected = document.getElementById("stateSelected").value
 
@@ -10,8 +28,8 @@ async function getWeather() {
             `
     <div id="details-response">
         <h2 class="state-name">${data.location.name}</h2>
-        <img src="${data.current.condition.icon}" alt="clima" id="img-temp">
-        <h1>${data.current.temp_c}°C</h1>
+        <img src="${data.current.condition.icon}" alt="clima" class="img-temp">
+        <h1 title="${data.current.temp_f}°F">${data.current.temp_c}°C</h1>
         <div class="details">
             <div id="humidityBox">
                 <p>Humidity</p>
@@ -23,6 +41,8 @@ async function getWeather() {
             </div>
         </div>
     </div>`
+
+        createRightBox(data)
 
         stateSelected = ""
     } else {
