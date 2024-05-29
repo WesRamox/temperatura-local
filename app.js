@@ -1,11 +1,13 @@
 async function getWeather() {
     let stateSelected = document.getElementById("stateSelected").value
-    const requestApp = await fetch(`https://api.weatherapi.com/v1/current.json?key=1d34254f1395482192e124938240205&q=${stateSelected}&aqi=no`)
-    const data = await requestApp.json()
 
-    let listDetails = document.getElementById("list-details")
-    listDetails.innerHTML = 
-    `
+    if (stateSelected != "") {
+        const requestApp = await fetch(`https://api.weatherapi.com/v1/current.json?key=1d34254f1395482192e124938240205&q=${stateSelected}&aqi=no`)
+        const data = await requestApp.json()
+        
+        let listDetails = document.getElementById("list-details")
+        listDetails.innerHTML =
+            `
     <div id="details-response">
         <h2 class="state-name">${data.location.name}</h2>
         <img src="${data.current.condition.icon}" alt="clima" id="img-temp">
@@ -21,14 +23,17 @@ async function getWeather() {
             </div>
         </div>
     </div>`
-  
-    stateSelected = ""
+
+        stateSelected = ""
+    } else {
+        alert("Por favor, adicione uma região")
+    }
 }
 
 document.getElementById("sendButton").addEventListener("click", getWeather)
-document.getElementById("stateSelected").addEventListener('keypress', function(event) {
+document.getElementById("stateSelected").addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
-      event.preventDefault();
+        event.preventDefault();
         getWeather();
     }
-  });
+});
